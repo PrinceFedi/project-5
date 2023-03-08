@@ -235,14 +235,14 @@
                                   // nums_items allows us to know the length of termination we need to stop at during our fetching process
                                   var num_items = checkpoint.length
                                   $(".control").each(function(index){
-                                      if (num_items < index){
+                                      if (index < num_items){
+                                          console.log("This is index: ", index);
                                           var items = $(this);
-                                          items.find("input[name='close']").val(checkpoint[index]);
-                                          items.find("input[name='miles']").val(checkpoint[index]);
-                                          items.find("input[name='km']").val(checkpoint[index]);
-                                          items.find("input[name='location']").val(checkpoint[index]);
-                                          items.find("input[name='open']").val(checkpoint[index]);
-                                          items.find("input[name='close']").val(checkpoint[index]);
+                                          items.find("input[name='miles']").val(checkpoint[index].miles);
+                                          items.find("input[name='km']").val(checkpoint[index].km);
+                                          items.find("input[name='location']").val(checkpoint[index].location);
+                                          items.find("input[name='open']").val(checkpoint[index].open);
+                                          items.find("input[name='close']").val(checkpoint[index].close);
                                       }
                                   });
                               } else {
